@@ -72,7 +72,7 @@ static inline auto from_chars( const char * first, const char * last, std::integ
         }
         else if constexpr( sizeof( number ) == 4 )
         {
-            result = strtol( buffer, ( char ** ) &end, base );
+            result = T( strtol( buffer, ( char ** ) &end, base ) );
         }
         else if constexpr( sizeof( number ) == 8 )
         {
@@ -95,7 +95,7 @@ static inline auto from_chars( const char * first, const char * last, std::integ
         }
         else if constexpr( sizeof( number ) == 4 )
         {
-            result = strtoul( buffer, ( char ** ) &end, base );
+            result = T( strtoul( buffer, ( char ** ) &end, base ));
         }
         else if constexpr( sizeof( number ) == 8 )
         {
